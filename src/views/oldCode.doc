@@ -1,0 +1,46 @@
+<template>
+  <v-app class="grey">
+    <BannerHeader title="Home" />
+    <v-main>
+      <h2 class="v-body-text">
+        This is a qualifications page.
+      </h2>
+
+      <vue-pdf-embed :source="pdfSource" ma-3 />
+
+    </v-main>
+  </v-app>
+</template>
+
+<script>
+  import BannerHeader from '../components/BannerHeader'
+  import VuePdfEmbed from 'vue-pdf-embed/dist/vue2-pdf-embed'
+
+  export default {
+    name: 'qualifications',
+
+    components: {
+      BannerHeader,
+      VuePdfEmbed,
+    },
+
+    data () {
+      return {
+        pdfSource: './resume.pdf',
+      }
+    }
+  }
+</script>
+
+<style scoped>
+    .v-body-text {
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        color: #1A2238;
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+
+    .v-btn {
+        color: #FF6A3D;
+    }
+</style>
