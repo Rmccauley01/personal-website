@@ -64,6 +64,8 @@
 
 <script>
   import BannerHeader from '../components/BannerHeader'
+  import db from '@/fb'
+  import { addDoc, collection } from "firebase/firestore"
 
   export default {
     name: 'qualifications',
@@ -96,10 +98,21 @@
 
     methods: {
 
-      validate () {
+      async validate () {
 
         if (this.$refs.form.validate()) {
-          console.log("True")
+
+          try{
+            const message = await addDoc(collection(db, "messages"), {
+              name: this.userName,
+              contact: this.userContact,
+              message: this.userMessage,
+            });
+
+            console.log("Document written with ID: ", message.id)
+          } catch (e) {
+            console.error("Error adding document: ", e);
+          }
         } else {
           console.log("False")
         }
