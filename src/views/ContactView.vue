@@ -58,6 +58,24 @@
           </v-form>
         </v-card>
       </v-container>
+
+      <v-snackbar
+        v-model="snackbar"
+        color="#FF6A3D"
+        timeout="2000"
+      >
+        {{ snackbarText }} 
+        <template v-slot:action="{ attrs }">
+          <v-btn
+            color="#1A2238"
+            text
+            v-bind="attrs"
+            @click="snackbar = false"
+          >
+            Close
+          </v-btn>
+        </template>
+      </v-snackbar>
     </v-main>
   </v-app>
 </template>
@@ -73,6 +91,8 @@
     data() {
       return {
         valid: true,
+        snackbar: false,
+        snackbarText: "",
         select: null,
         userName:"",
         userNameRules: [
@@ -110,20 +130,13 @@
             });
 
             console.log("Document written with ID: ", message.id)
+            this.$refs.form.reset()
+            this.snackbarText = "Message sent successfully!"
+            this.snackbar = true;
           } catch (e) {
             console.error("Error adding document: ", e);
           }
-        } else {
-          console.log("False")
         }
-      },
-
-      reset () {
-        this.$refs.form.reset()
-      },
-      
-      resetValidation () {
-        this.$refs.form.resetValidation()
       },
     }
   }
