@@ -58,12 +58,32 @@
           </v-form>
         </v-card>
       </v-container>
+
+      <v-snackbar
+        v-model="snackbar"
+        color="#FF6A3D"
+        timeout="2000"
+      >
+        {{ snackbarText }} 
+        <template v-slot:action="{ attrs }">
+          <v-btn
+            color="#1A2238"
+            text
+            v-bind="attrs"
+            @click="snackbar = false"
+          >
+            Close
+          </v-btn>
+        </template>
+      </v-snackbar>
     </v-main>
   </v-app>
 </template>
 
 <script>
   import BannerHeader from '../components/BannerHeader'
+  import db from '@/fb'
+  import { addDoc, collection } from "firebase/firestore"
 
   export default {
     name: 'qualifications',
@@ -71,6 +91,8 @@
     data() {
       return {
         valid: true,
+        snackbar: false,
+        snackbarText: "",
         select: null,
         userName:"",
         userNameRules: [
@@ -96,21 +118,25 @@
 
     methods: {
 
-      validate () {
+      async validate () {
 
         if (this.$refs.form.validate()) {
-          console.log("True")
-        } else {
-          console.log("False")
-        }
-      },
 
-      reset () {
-        this.$refs.form.reset()
-      },
-      
-      resetValidation () {
-        this.$refs.form.resetValidation()
+          try{
+            const message = await addDoc(collection(db, "messages"), {
+              name: this.userName,
+              contact: this.userContact,
+              message: this.userMessage,
+            });
+
+            console.log("Document written with ID: ", message.id)
+            this.$refs.form.reset()
+            this.snackbarText = "Message sent successfully!"
+            this.snackbar = true;
+          } catch (e) {
+            console.error("Error adding document: ", e);
+          }
+        }
       },
     }
   }
