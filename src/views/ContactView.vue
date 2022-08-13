@@ -144,6 +144,7 @@
 
 <style scoped>
     .v-header-text {
+      font-family: 'Lucida Sans';
       color: #FF6A3D;
     }
 
