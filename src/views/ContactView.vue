@@ -1,12 +1,12 @@
 <template>
-  <v-app class="grey">
+  <v-app class="grey lighten-1">
     <BannerHeader title="Home" />
     <v-main>
       <v-container>
 
-        <v-card flat class="pa-5 my-5 mx-10 text-center" color="#1A2238">
+        <v-card flat class="my-5 py-5 text-center" color="#1A2238">
           <p class="v-header-text font-weight-light text-h3 text-md-h2">Contact Info:</p>
-          <p class="v-header-text font-weight-thin text-h6 text-md-h4">Email: {{ myEmail }}</p>
+          <p class="v-header-text font-weight-thin text-h6 text-md-h4">Email: {{ myEmail }} </p>
           <p class="v-header-text font-weight-thin text-h6 text-md-h4">Phone Number: {{ myNumber }}</p>
         </v-card>
 
