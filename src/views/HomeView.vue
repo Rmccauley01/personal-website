@@ -1,5 +1,5 @@
 <template>
-  <v-app class="grey">
+  <v-app class="grey lighten-1">
     <BannerHeader title="Home" />
     <v-main class="mb-15">
       <v-carousel
