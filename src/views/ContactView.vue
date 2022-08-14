@@ -5,9 +5,9 @@
       <v-container>
 
         <v-card flat class="pa-5 my-5 mx-10 text-center" color="#1A2238">
-          <h1 class="v-header-text">Contact Info:</h1>
-          <h2 class="v-header-text">Email: {{ myEmail }}</h2>
-          <h2 class="v-header-text">Phone Number: {{ myNumber }}</h2>
+          <p class="v-header-text font-weight-light text-h3 text-md-h2">Contact Info:</p>
+          <p class="v-header-text font-weight-thin text-h6 text-md-h4">Email: {{ myEmail }}</p>
+          <p class="v-header-text font-weight-thin text-h6 text-md-h4">Phone Number: {{ myNumber }}</p>
         </v-card>
 
         <v-card flat color="#1A2238">

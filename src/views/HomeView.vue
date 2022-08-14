@@ -1,9 +1,9 @@
 <template>
   <v-app class="grey">
     <BannerHeader title="Home" />
-    <v-main>
+    <v-main class="mb-15">
       <v-carousel
-        height="600"
+        height="100%"
         hide-delimiter-background
         show-arrows-on-hover
       >
@@ -29,8 +29,8 @@
               </v-icon>
             </v-row>
 
-            <v-row justify="center" class="mx-12 mb-12">
-              <h2 class="v-body-text ma-12 mb-12">
+            <v-row justify="center" class=" text-body mx-12 mb-12 ">
+              <h2 class="v-body-text ma-12 mb-12 font-weight-thin">
                 {{ bodyText[i] }}
               </h2>
             </v-row>
