@@ -18,7 +18,7 @@
             <v-row
               justify="center"
             >
-              <div class="v-body-text text-h2 mt-12">
+              <div class="v-body-text text-h3 text-md-h2 mt-12">
                 {{ slide }}
               </div>
             </v-row>
@@ -30,7 +30,7 @@
             </v-row>
 
             <v-row justify="center" class=" text-body mx-12 mb-12 ">
-              <h2 class="v-body-text ma-12 mb-12 font-weight-thin">
+              <h2 class="v-body-text ma-12 mb-12 font-weight-thin text-h6 text-md-h4">
                 {{ bodyText[i] }}
               </h2>
             </v-row>
@@ -82,7 +82,7 @@
 
 <style scoped>
     .v-body-text {
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-family: 'Lucida Sans',;
         color: #FF6A3D;
     }
 
