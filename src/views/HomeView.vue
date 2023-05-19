@@ -2,69 +2,71 @@
   <v-app class="grey lighten-1">
     <BannerHeader title="Home" />
     <v-main class="mb-15">
-      <v-carousel
-        height="100%"
-        hide-delimiter-background
-        show-arrows-on-hover
-      >
-
-        <v-carousel-item>
-          <v-sheet
-            color="#1A2238"
-            height="100%"
-          >
-            <v-row
-              justify="center"
-            >
-              <div class="v-body-text text-h3 text-md-h2 mt-12">
-                About Me
-              </div>
-            </v-row>
-
-            <v-row justify="center" class="mt-10">
-              <v-img class="mx-10" contain aspect-ratio="3" :src="bigmanoncampus"></v-img>
-            </v-row>
-
-            <v-row justify="center" class=" text-body mx-12 mb-12 ">
-              <h2 class="v-body-text ma-12 mb-12 font-weight-thin text-h6 text-md-h4">
-                Hello, My name is Ryan McCauley and I am a Senior Computer Science major at Texas A&M University. My anticipated graduation date is May 2023. I am seeking a position upon graduation where I can broaden my knowledge and put my skills to work. Aside from working on school, I enjoy taking up personal coding projects (like this one), playing rugby for A&M, exploring entrepreneurial ideas, and several other hobbies. Please browse this site for my resume and other information. 
-              </h2>
-            </v-row>
-
-          </v-sheet>
-        </v-carousel-item>
-
-        <v-carousel-item
-          v-for="(slide, i) in slides"
-          :key="i"
+      <v-container>
+        <v-carousel
+          height="100%"
+          hide-delimiter-background
+          show-arrows-on-hover
         >
-          <v-sheet
-            color="#1A2238"
-            height="100%"
-          >
-            <v-row
-              justify="center"
+
+          <v-carousel-item>
+            <v-sheet
+              color="#1A2238"
+              height="100%"
             >
-              <div class="v-body-text text-h3 text-md-h2 mt-12">
-                {{ slide }}
-              </div>
-            </v-row>
+              <v-row
+                justify="center"
+              >
+                <div class="v-body-text text-h3 text-md-h2 mt-12">
+                  About Me
+                </div>
+              </v-row>
 
-            <v-row justify="center" class="mt-10">
-              <v-icon class="v-icon" ma-0>
-                {{ icons[i] }}
-              </v-icon>
-            </v-row>
+              <v-row justify="center" class="mt-10">
+                <v-img class="mx-10" contain aspect-ratio="3" :src="bigmanoncampus"></v-img>
+              </v-row>
 
-            <v-row justify="center" class=" text-body mx-12 mb-12 ">
-              <h2 class="v-body-text ma-12 mb-12 font-weight-thin text-h6 text-md-h4">
-                {{ bodyText[i] }}
-              </h2>
-            </v-row>
+              <v-row justify="center" class=" text-body mx-12 mb-12 ">
+                <h2 class="v-body-text ma-12 mb-12 font-weight-thin text-h6 text-md-h4">
+                  Hello, My name is Ryan McCauley and I am a Senior Computer Science major at Texas A&M University. My anticipated graduation date is May 2023. I am seeking a position upon graduation where I can broaden my knowledge and put my skills to work. Aside from working on school, I enjoy taking up personal coding projects (like this one), playing rugby for A&M, exploring entrepreneurial ideas, and several other hobbies. Please browse this site for my resume and other information. 
+                </h2>
+              </v-row>
 
-          </v-sheet>
-        </v-carousel-item>
-      </v-carousel>
+            </v-sheet>
+          </v-carousel-item>
+
+          <v-carousel-item
+            v-for="(slide, i) in slides"
+            :key="i"
+          >
+            <v-sheet
+              color="#1A2238"
+              height="100%"
+            >
+              <v-row
+                justify="center"
+              >
+                <div class="v-body-text text-h3 text-md-h2 mt-12">
+                  {{ slide }}
+                </div>
+              </v-row>
+
+              <v-row justify="center" class="mt-10">
+                <v-icon class="v-icon" ma-0>
+                  {{ icons[i] }}
+                </v-icon>
+              </v-row>
+
+              <v-row justify="center" class=" text-body mx-12 mb-12 ">
+                <h2 class="v-body-text ma-12 mb-12 font-weight-thin text-h6 text-md-h4">
+                  {{ bodyText[i] }}
+                </h2>
+              </v-row>
+
+            </v-sheet>
+          </v-carousel-item>
+        </v-carousel>
+      </v-container>
     </v-main>
   </v-app>
 </template>

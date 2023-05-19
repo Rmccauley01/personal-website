@@ -3,12 +3,11 @@
         <v-app-bar app color="#1A2238">
             <v-container fluid>
                 <v-row
-                align="center"
+                    align="center"
                 >
-
                     <v-menu offset-y>
                         <template v-slot:activator="{ on, attrs }">
-                            <v-btn text class="ma-0" v-bind="attrs" v-on="on">
+                            <v-btn text class="mr-3 ml-0 hidden-lg-and-up" v-bind="attrs" v-on="on">
                                 <v-icon color="#FF6A3D">mdi-menu</v-icon>
                             </v-btn>
                         </template>
